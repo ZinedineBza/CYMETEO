@@ -1,0 +1,36 @@
+Utilisation : ./projet.sh [OPTION]... [FICHIER.csv]...
+Produit des graphics selon les options données
+
+Sans FICHIER ou quand FICHIER est -, le projet ne s'execute pas.
+
+Indispensable :
+    -f <nom_fichier>            Rentrer le nom du fichier 
+
+Une option obligatoire :
+    -t <mode>                   Donne la temperature en fonction de mode 
+        1                   temperatures minimales, maximales et moyennes par station dans l’ordre croissant du numéro de station.
+        2                   temperature moyennes par date/heure, triées dans l’ordre chronologique. La moyenne se fait sur toutes les stations.
+        3                   temperatures par date/heure par station. Elles seront triées d’abord par ordre chronologique, puis par ordre croissant de l’identifiant de la station
+    -p<mode>                    Donne la pressions atmosphériques en fonction de mode
+        1                   pressions minimales, maximales et moyennes par station dans l’ordre croissant du numéro de station.
+        2                   pressions moyennes par date/heure, triées dans l’ordre chronologique. La moyenne se fait sur toutes les stations.
+        3                   pressions par date/heure par station. Elles seront triées d’abord par ordre chronologique, puis par ordre croissant de l’identifiant de la station
+    -w                          Produit en sortie l’orientation moyenne et la vitesse moyenne des vents pour chaque station
+    -h                          Produit en sortie l’altitude pour chaque station. Les altitudes seront triées par ordre décroissant.
+    -m                          Produit en sortie l’humidité maximale pour chaque station. Les valeurs d’humidités seront triées par ordre décroissant.
+
+Autre option : 
+	Filtre geographique ( 1 max ) :
+	    -F                      France 
+	    -G                      Guyane française	
+	    -S                      Saint-Pierre et Miquelon 
+	    -A                      Antilles
+	    -O                      Océan indien
+	    -Q                      antarctique
+	-d <min>,<max>				Les données de sortie sont dans l’intervalle de dates [<min>..<max>] incluses. 
+	Tri :
+		--tab                   tri effectué à l’aide d’une structure linéaire 
+		--abr                   tri effectué l’aide d’une structure de type ABR
+		--avl                   tri effectué à l’aide d’une structure de type AVL
+
+
